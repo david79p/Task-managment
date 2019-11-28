@@ -1,0 +1,75 @@
+
+<!--Source:Responsive Table V2 link:https://uicookies.com/css-table-templates/-->
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+                <div class="table">
+                    
+                    <div class="row header">
+                        <div class="cell">
+                                ID
+                        </div>
+                        <div class="cell">
+                                Name
+                        </div>
+                        <div class="cell">
+                                Todo date
+                        </div>
+                        <div class="cell">
+                                Priority
+                        </div>
+                        <div class="cell">
+                                Status
+                        </div>
+                        
+                        <div class="cell">
+                              &nbsp;
+                        </div>
+                        <div class="cell">
+                              &nbsp;
+                        </div>
+                        <div class="cell">
+                              &nbsp;
+                        </div>
+        
+                    </div>
+
+                    <div [ngClass]="(task.taskStatus==2)?'row disabled-row':'row'"   *ngFor="let task of tasks">
+                        <div class="cell" data-title="ID">
+                                    {{task.id}}
+                        </div>
+                        <div class="cell" data-title="Name">
+                                {{task.name}}
+                        </div>
+                        <div class="cell" data-title="Todo date">
+                                {{task.todoDate | date:'dd/MM/yyyy'}}
+                        </div>
+                         
+                        <div class="cell" data-title="Priority">
+                                {{Priority[task.taskPriority]}}
+                        </div>
+                        <div class="cell" data-title="Status">
+                                {{Status[task.taskStatus]}}
+                        </div>
+                        
+                        <div class="cell" >
+                                <button [disabled]="task.taskStatus==2" class="contact100-form-btn" (click)="onDelete(task.id)">
+                                        Delete
+                                </button>
+                        </div>
+                        <div class="cell" >
+                                <button [disabled]="task.taskStatus==2" class="contact100-form-btn" (click)="onEdit(task.id)">
+                                        Update
+                                </button>
+                        </div>
+                        <div class="cell" >
+                                <button [disabled]="task.taskStatus==2" class="contact100-form-btn" (click)="onChangeStatus(task.id)">
+                                        Change status
+                                </button>
+                        </div>
+                
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

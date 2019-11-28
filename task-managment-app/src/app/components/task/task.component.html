@@ -1,0 +1,30 @@
+
+<!--Source:Contact Form v18 link:https://colorlib.com/wp/template/contact-form-v18/-->
+<form [formGroup]="taskFormGroup">
+<div class="flex-container">
+                <input type="hidden" formControlName="id">
+                <input type="hidden" formControlName="taskStatus">
+                <div class="wrap-input100">
+                    <label class="label-input100" for="task-name" >Task name</label>
+                    <input formControlName="name" maxlength="30" class="input100" type="text" name="task-name" placeholder="Enter task...">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100">
+                    <label class="label-input100" for="todo-date" >Todo date</label>
+                    <input formControlName="todoDate" maxlength="10" class="input100" type="text" name="todo-date" placeholder="DD/MM/YYYY" >
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100">
+                    <label class="label-input100" for="priority" >priority</label>
+                    <input formControlName="taskPriority" maxlength="6" class="input100" type="text" name="priority" placeholder="High/Medium/Low">
+                    <span class="focus-input100"></span>
+                </div>
+
+
+    <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" (click)="onSave()">
+            Save
+        </button>
+    </div>
+</div>
+</form>
